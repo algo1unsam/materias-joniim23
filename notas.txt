@@ -1,0 +1,49 @@
+Queremos implementar un sistema que permita realizar la inscripción a materias de una Universidad. 
+
+De cada materia hay un único curso y el programa tiene sólo información de la inscripción actual, no nos interesan inscripciones anteriores. 
+Debemos conocer el historial de materias aprobadas de un estudiante. De cada materia aprobada hay que saber qué materia aprobó y con qué nota.
+
+2. Registrar una materia aprobada por un estudiante, verificando que no se cargue dos veces la nota de una misma materia.
+
+3. Inscribir un alumno a un curso, verificando las condiciones de inscripción de la materia. 
+ Además, cada materia tiene un “cupo”, es decir, una cantidad máxima de estudiante que se pueden inscribir. 
+ Para manejar el exceso en los cupos, las materias tienen una lista de espera, de estudiantes que quisieran cursar pero no tienen lugar 
+ (ver punto 5). 
+ Pero el criterio para ver quién va a la lista de espera, es distinto según la carrera:
+
+    * Por orden de llegada: si te querés inscribir y no hay lugar vas a la lista de espera por llegar último
+    * Elitista: entran los que tengan mejor promedio.
+    * Por grado de avance: Inscribimos al estudiante con más materias aprobadas en la carrera.
+No se requiere que el sistema conteste nada con respecto al resultado de la inscripción.
+
+5. Resultados de inscripción. Luego de la inscripción, el sistema debe poder contestar
+    * Dada una materia los estudiantes inscriptos.
+    * Dada una materia los estudiantes en lista de espera
+
+Clase Carrera
+- materias
+
+Clase Materia inherit carrera
+- nombre
+- const nota
+- anio
+- alumnos
+- carrera
+- requerimiento para cursar:
+	- correlativas
+	- anio anteriores
+	- nada
+- cupo
+- estudiantes inscriptos
+- lista de espera
+ - para ingresar
+ 	- FIFO
+ 	- elitista -> mejor promedio
+ 	- grado de avance -> mayor materias aprobadas de la carrera
+- dar de baja a estudiante
+
+Clase estudiante
+- carreras
+- materias aprobadas
+- materias cursadas
+- creditos

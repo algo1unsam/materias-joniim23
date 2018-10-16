@@ -1,6 +1,6 @@
 import carrera.*
 
-class Materia inherits Carrera
+class Materia 
 {
 	const nombre
 	var nota

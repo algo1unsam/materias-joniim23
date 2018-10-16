@@ -3,11 +3,12 @@ import carrera.*
 class Materia 
 {
 	const nombre
-	var nota
 	const anio
-	var alumnos = []
-	const carrera 
+	const carrera
+	var property nota
 	const correlativas = []
+	 
+	
 	/*para ingresar a materia:
  	- FIFO
  	- elitista -> mejor promedio
@@ -17,7 +18,6 @@ class Materia
 	var property estudiantesInscriptos
 	var property listaDeEspera
 
-	method 
 /*
  1. Determinar si un estudiante puede cursar una materia. Para esto se deben cumplir tres condiciones: 
    * La materia debe corresponder a alguna de las carreras que esté cursando el estudiante.	Tener en cuenta que: 
